@@ -5,29 +5,40 @@
 <body>
     <div class="container">
         <header>
+            <h1>Feature Request</h1>
         </header>
         <div>
-            <form class="new-feature">
-                <fieldset class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" placeholder="Enter Title">
-                </fieldset>
-                <fieldset class="form-group">
-                    <label for="description">Description</label>
-                    <input type="textarea" class="form-control" id="description" placeholder="Enter Description">
-                </fieldset>
-            </form>
+            {{> newFeatureForm}}
         </div>
         <div>
-            <ul>
+            <!-- <ul>
               {{#each features}}
-                {{> feature}}
+              {{> feature}}
               {{/each}}
-            </ul>
-        </div>
-    </div>
+            </ul> -->
+      </div>
+      {{> tabular table=TabularTables.Features class="table table-striped table-bordered table-condensed"}}
+
+  </div>
 </body>
 
 <template name="feature">
-    <li>{{text}}</li>
+    <li>
+        <button class="delete">&times;</button>
+        <button class="octicon octicon-pencil edit"></button>
+        {{title}} , {{description}}
+    </li>
+</template>
+<template name="newFeatureForm">
+    <form class="new-feature">
+        <fieldset class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter Title">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="description">Description</label>
+            <input type="textarea" class="form-control" id="description" placeholder="Enter Description">
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </template>
