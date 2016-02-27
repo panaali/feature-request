@@ -1,5 +1,7 @@
 # Feature Request
 Feature request is a web application based on [Meteor](https://www.meteor.com/) that helps organizations to record their customers features requests.
+## Demo
+[Feature Request Demo](http://feature-request.meteor.com)
 
 ## Installation:
 

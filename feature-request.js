@@ -11,7 +11,7 @@ var findUpdatePriority = function (client) {
     clientWithMaxPriority = Features.findOne({'client': client}, {sort : {clientPriority: -1}, limit: 1});
     var maxPriority = 0;
     if (clientWithMaxPriority) {
-        maxPriority = parseInt(clientWithMaxPriority.clientPriority)
+        maxPriority = clientWithMaxPriority.clientPriority;
     }
     updatePriority(maxPriority);
 }
