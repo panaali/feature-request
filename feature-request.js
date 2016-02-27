@@ -4,7 +4,7 @@ TabularTables = {};
 TabularTables.Features = new Tabular.Table({
   name: "Features",
   collection: Features,
-  order: [[5, "asc"]],
+  order: [[6, "desc"]],
   columns: [
     {data: "title", title: "Title"},
     {data: "description", title: "Description"},
@@ -30,7 +30,11 @@ TabularTables.Features = new Tabular.Table({
 });
 
 if (Meteor.isClient) {
-    // This code only runs on the client
+    Template.tabular.events({
+         "click .remove": function () {
+          Features.remove(this._id);
+        }
+    });
     Template.body.helpers({
         features: function() {
             return features.find({}, {
