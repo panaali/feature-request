@@ -16,6 +16,9 @@ var findUpdatePriority = function (client) {
     updatePriority(maxPriority);
 }
 
+var toUrl = function (val) {
+    return '<a href="' + val + '" target="_blank">' + val + '</a>';
+}
 TabularTables = {};
 
 TabularTables.Features = new Tabular.Table({
@@ -28,7 +31,10 @@ TabularTables.Features = new Tabular.Table({
     {data: "client", title: "Client"},
     {data: "clientPriority", title: "Client Priority"},
     {data: "targetDate", title: "Target date"},
-    {data: "url", title: "Url"},
+    {data: "url", title: "Url", render: function (val, type, doc) {
+          return toUrl(val);
+      }
+    },
     {data: "productArea", title: "Product Area"},
     {
       data: "createdAt",
