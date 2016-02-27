@@ -16,12 +16,13 @@
 </body>
 
 <template name="newFeatureForm">
+{{#with fromData}}
 <div class="row">
     <form class="new-feature col-sm-12 col-sm-offset-2 form-horizontal">
         <fieldset class="form-group">
             <label for="title" class="col-sm-2 control-label">Title</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="title" placeholder="Enter Title">
+                <input type="text" class="form-control" id="title" placeholder="Enter Title" value="{{title}}">
             </div>
         </fieldset>
         <fieldset class="form-group">
@@ -77,8 +78,9 @@
       <button type="submit" class="btn btn-primary col-sm-offset-2">Submit</button>
   </form>
 </div>
+{{/with}}
 </template>
 <template name="featureEditCell">
     <span class="glyphicon glyphicon-remove remove"></span>
-    <span class="glyphicon glyphicon-edit edit"></span>
+    <!-- <span class="glyphicon glyphicon-edit edit"></span> -->
 </template>
